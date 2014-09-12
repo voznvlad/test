@@ -1,0 +1,76 @@
+h1 {color:red;
+	text-align:center;
+}
+.header {visibility:visible;
+		color:red;
+		position:fixed;
+		background-color:blue;
+		display:block;
+		width:100%;
+		height:10%;
+		min-height:50px;
+		text-align:center;
+		top:0px;
+		left:0px;
+		padding-top:0%;
+		z-index:10;
+		
+		}
+.name {width:100%;
+		height:49%;
+		
+		
+		}
+.hello {z-index:1000;
+		background-color:yellow;
+		width:48.7%;
+		height:49%;
+		vertical-align:100px;
+		min-height:25px;
+		display:inline-block;
+		float:left;
+		clear:left;
+		margin-left:1%;
+		margin-bottom:2px;
+		}
+.table {background-color:yellow;
+		width:48.7%;
+		height:49%;
+		min-height:25px;
+		float:right;
+		display:inline-block;
+		clear:right;
+		bottom:20px;
+		margin-right:1%;
+		}
+		
+.main {
+	margin-top:0px;
+	overflow:auto;
+	width:99%;
+	height:89%;
+	display:block;
+	position:fixed;
+	top:11%;
+}
+		
+
+table {border-collapse:collapse;
+	
+}
+#hello {
+		text-align:center;
+}
+td{min-width:300px;
+	max-width:300px;
+	min-height:32px;
+	max-height:32px;
+	width:300px;
+	height:32px;
+	border-color:black;
+	border-width:1px;
+	background-color:white;
+	text-indent:20px;
+	border-style:solid;
+}
+
