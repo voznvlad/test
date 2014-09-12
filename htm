@@ -1,65 +1,49 @@
 <!DOCTYPE html>
 <HTML>
 <Head>
-<Title>AAA</Title>
+<Title>Wikimart Test Task</Title>
 <link rel="stylesheet" href="newcss.css"/>
-
-<script type="text/javascript">
-    //<![CDATA[
-    
-    var invocation = new XMLHttpRequest();
-    var url = 'http://ivsevolod.ru/site/getData?offset=1&limit=50';
-    var invocationHistoryText;
-    
-    function callOtherDomain(){
-        if(invocation)
-        {    
-            console.log(10);
-			invocation.open('GET', url, true);
-            invocation.onreadystatechange = handler;
-            invocation.send(); 
-        }
-        else
-        {
-            invocationHistoryText = "No Invocation TookPlace At All";
-            var textNode = document.createTextNode(invocationHistoryText);
-            var textDiv = document.getElementById("textDiv");
-            textDiv.appendChild(textNode);
-        }
-        
-    }
-    function handler(evtXHR)
-    {
-        if (invocation.readyState == 4)
-        {
-                if (invocation.status == 200)
-                {
-                    var response = invocation.responseXML;
-                    var invocationHistory = response.getElementsByTagName('invocationHistory').item(0).firstChild.data;
-                    invocationHistoryText = document.createTextNode(invocationHistory);
-                    var textDiv = document.getElementById("x");
-                    textDiv.appendChild(invocationHistoryText);
-                    
-                }
-                else
-                    alert("Invocation Errors Occured");
-        }
-        else
-            dump("currently the application is at" + invocation.readyState);
-    }
-	callOtherDomain();
-    //]]>
-    
-    
-    </script>
+<script src="jq.js" type="text/javascript"></script>
+<script src="newjs.js" type="text/javascript"></script>
+<script src="jquery-ui.js" type="text/javascript"></script>
 
 </Head>
 <Body>
+ 
+  <div class="header">
+	<div class="name">Header</div>
+	<div class="hello">Hello</div>
+	<div class="table">Table</div>
+  </div>
+  <div class="main">
 
-<h1>AAAasdadadasdadadasd</h1>
-<p id="x">xxx</p>
-<p id="y">yyy</p>
-<p id="z">zzz</p>
-<script type="text/javascript" src="newjs.js"></script>
+	<table>
+		<tbody>
+		</tbody>
+	</table>
+
+
+  </div>
+ 
+<script type="text/javascript">
+
+/*$.ajax({
+    url: "http://ivsevolod.ru/site/getData?offset=1&limit=50",
+ 
+    jsonp: "result[0].id",
+ 
+    dataType: "jsonp",
+ 
+    data: {
+        q: "select title,abstract,url from search.news where query=\"cat\"",
+        format: "json"
+    },
+	
+    success: function( response ) {
+        console.log( response ); 
+    }
+});*/
+</script>
+
 </Body>
 </HTML>
