@@ -9,21 +9,13 @@ h1 {color:orange;
 		cursor:default;
 		display:block;
 		width:100%;
-		
 		min-height:60px;
 		text-align:center;
 		top:0px;
 		left:0px;
-		padding-top:0%;
-		z-index:10;
-		
-		}
-		
-.header {
-    background: #707070;
+    background: #555555;
     background: -webkit-gradient(linear, left top, left bottom, from(#707070), to(#2e2e2e) );
     background: -moz-linear-gradient(-90deg, #707070, #2e2e2e);
-    filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#707070', endColorstr='#2e2e2e');
 }
 		
 .name {width:134px;
@@ -33,10 +25,9 @@ h1 {color:orange;
 		text-shadow: 0 1px 0 rgba(0,0,0,0.4);
 		height:100%;
 		vertical-align:middle;
-		
 		margin-left:1%;
 		}
-.hello {z-index:1000;
+.hello {
 		width:20%;
 		min-width:200px;
 		display:inline-block;
@@ -49,15 +40,10 @@ h1 {color:orange;
 		height:40px;
 		float:right;
 		display:inline-block;
-
 		}
 		
 .main {
-	
-	margin-top:0px;
 	overflow:auto;
-	width:99%;
-	height:89%;
 	display:block;
 	position:fixed;
 	top:75px;
@@ -65,11 +51,8 @@ h1 {color:orange;
 		
 
 table {border-collapse:collapse;
-	
 }
-#hello {
-		text-align:center;
-}
+
 td{min-width:300px;
 	max-width:300px;
 	min-height:32px;
