@@ -18,6 +18,7 @@ var getJSON = function(url, successHandler, errorHandler) {				//get data from s
 		data = JSON.parse(xhr.responseText);
 		successHandler && successHandler(data);
       } else {
+		console.log("There was a problem getting JSON data from server.")
         errorHandler && errorHandler(status);
       }
     }
@@ -47,16 +48,47 @@ $(".table").click(function(){window.location.hash = "table"});		//To Table tab
 var resizeFunc = function () {											//help application to look better when window gets small
 	$(".main").css({height:((window.innerHeight-78))});
 	$(".main").css({width:((window.innerWidth-12))});
-	if(window.innerWidth<=600){
+	if(window.innerWidth<=320){													//very small
+		$(".name").css({width:67,
+						marginTop:5,
+						font:"bold 15px 'Trebuchet MS',Arial, Helvetica"});
+		$(".hello").html("Прив.");
+		$(".table").html("Табл.");
+		$(".hello, .table").css({width:"20%",
+						minWidth:55,
+						height:25,
+						paddingTop:4,
+						marginLeft:0,
+						marginTop:9,
+						font:"bold 15px 'Trebuchet MS',Arial, Helvetica"});
+						
+		$(".header").css({minHeight:50});
+		$(".main").css({top:52,
+						left:3});
+		$(".main").css({height:((window.innerHeight-62))});				
+	}
+	else if(window.innerWidth<=600){												//small
+		$(".main").css({height:((window.innerHeight-78))});
+		$(".main").css({top:75,
+						left:5});
 		$(".button").css({height:25,
 						width:"50%",
-						minWidth:150,font:"bold 20px 'Trebuchet MS',Arial, Helvetica"});
+						minWidth:150,
+						paddingTop:"",
+						marginLeft:"",
+						marginTop:"",
+						font:"bold 20px 'Trebuchet MS',Arial, Helvetica"});
 		$(".hello").css({marginBottom:5,
 						marginTop:5});
 		$(".table").css({marginTop:0,
 						marginBottom:0});
+		$(".hello").html("Приветствие");
+		$(".table").html("Таблица");
+		$(".name").css({width:134,
+						marginTop:"",
+						font:"bold 30px 'Trebuchet MS',Arial, Helvetica"});
 	}
-	else{
+	else{																				//normal
 		$(".button").css({height:"",
 						width:"",
 						minWidth:"",
@@ -65,23 +97,19 @@ var resizeFunc = function () {											//help application to look better when 
 						marginTop:""});
 		$(".table").css({marginTop:"",
 						marginBottom:""});
+		$(".hello").html("Приветствие");
+		$(".table").html("Таблица");
 	}
 }
 
-var theEnd = function(){								//function - writes "total" attribute from JSON into the last table cell
-	$("td:last").text("Total: "+fromJSON.total);
-	$("td:last").removeClass();							//removes class so the cell won`t be colored on click
-}
 
-var colorFill = function (el){										//coloring function
-	$(el).animate({backgroundColor:$(el).attr("class")},400);
+var colorFill = function (element){										//coloring function
+	$(element).animate({backgroundColor:$(element).attr("class")},400);
 }
 
 var newrow = function(quantity){										//function - creating and filling new rows
-  var Res=fromJSON.result
   if(rowQuantity >= 256 || quantity < 1){								//if enough rows, let them be colored and call the End function
     $("td").click(function() {colorFill(this);});						//this lets last created rows be colored
-    theEnd();
     return;
   }
 	for (i=0;i<quantity;i++) {											//loop create rows
@@ -90,8 +118,8 @@ var newrow = function(quantity){										//function - creating and filling new 
 		$("tbody").append("<tr></tr>");
 		rowQuantity++;
 		for(j=0;j<8;j++){												//lopp create columns
-			if(numberFromJSON === Res.length){numberFromJSON=0;}					//start over if JSON file ended
-			$("tr:last").append("<td class="+Res[numberFromJSON].color+">"+ Res[numberFromJSON].name +"</td>");		//fill columns with "names"
+			if(numberFromJSON === fromJSON.result.length){numberFromJSON=0;}					//start over if JSON file ended
+			$("tr:last").append("<td class="+fromJSON.result[numberFromJSON].color+">"+ fromJSON.result[numberFromJSON].name +"</td>");		//fill columns with "names"
 			numberFromJSON++;
 		}
 	}
