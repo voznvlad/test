@@ -10,7 +10,7 @@ h1 {color:orange;
 		display:block;
 		width:100%;
 		min-height:60px;
-		text-align:center;
+		text-align:left;
 		top:0px;
 		left:0px;
     background: #555555;
@@ -21,25 +21,20 @@ h1 {color:orange;
 .name {width:134px;
 		display:inline block;
 		float:left;
+		text-align:center;
 		font: bold 30px 'Trebuchet MS',Arial, Helvetica;
 		text-shadow: 0 1px 0 rgba(0,0,0,0.4);
 		height:100%;
 		vertical-align:middle;
 		margin-left:1%;
 		}
-.hello {
-		width:20%;
-		min-width:200px;
-		display:inline-block;
-		float:right;
-		height:40px;
-		}
+.hello,
 .table {
 		width:20%;
 		min-width:200px;
-		height:40px;
-		float:right;
 		display:inline-block;
+		float:right;
+		height:40px;
 		}
 		
 .main {
