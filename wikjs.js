@@ -52,8 +52,8 @@ var resizeFunc = function () {											//help application to look better when 
 		$(".name").css({width:67,
 						marginTop:5,
 						font:"bold 15px 'Trebuchet MS',Arial, Helvetica"});
-		$(".hello").html("Прив.");
-		$(".table").html("Табл.");
+		$(".hello").html("Greet");
+		$(".table").html("Table");
 		$(".hello, .table").css({width:"20%",
 						minWidth:55,
 						height:25,
@@ -82,8 +82,8 @@ var resizeFunc = function () {											//help application to look better when 
 						marginTop:5});
 		$(".table").css({marginTop:0,
 						marginBottom:0});
-		$(".hello").html("Приветствие");
-		$(".table").html("Таблица");
+		$(".hello").html("Greeting");
+		$(".table").html("Table");
 		$(".name").css({width:134,
 						marginTop:"",
 						font:"bold 30px 'Trebuchet MS',Arial, Helvetica"});
@@ -97,8 +97,8 @@ var resizeFunc = function () {											//help application to look better when 
 						marginTop:""});
 		$(".table").css({marginTop:"",
 						marginBottom:""});
-		$(".hello").html("Приветствие");
-		$(".table").html("Таблица");
+		$(".hello").html("Greeting");
+		$(".table").html("Table");
 	}
 }
 
